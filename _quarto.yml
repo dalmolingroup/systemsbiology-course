@@ -1,0 +1,38 @@
+project:
+  type: book
+  output-dir: docs
+
+lang: "pt-BR"
+
+book:
+  title: "Curso de Biologia de Sistemas"
+  author: "Dalmolin Systems Biology Group"
+  chapters:
+    - index.qmd
+    - content/01_Introduction.qmd
+    - content/02_history.qmd
+    - content/03_operation.qmd
+  reader-mode: true
+  favicon: content/images/dalmolin_icon.svg
+  site-url: https://dalmolingroup.github.io/introductionR-course/
+  repo-url: https://github.com/dalmolingroup/introductionR-course
+  page-footer:
+      O Curso de Biologia de Sistemas é um curso construído por membros do
+      <a href="https://dalmolingroup.imd.ufrn.br/">Dalmolin Systems Biology Group</a>.
+
+knitr:
+  opts_chunk:
+    message: false
+    warning: false
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    callout-appearance: simple
+    code-link: true
+    code-overflow: wrap
+    code-block-bg: true
+    code-block-border-left: "#b19cd9"
+    highlight-style: github

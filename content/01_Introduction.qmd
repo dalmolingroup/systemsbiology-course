@@ -1,0 +1,67 @@
+## Introdução à Biologia de Sistemas
+
+## De onde vem os dados?
+
+**"...omas"**
+
+-   [*Genoma*]{.underline}: o DNA de todo o organismo.
+
+-   [*Transcriptoma*]{.underline}: o mRNA de todo o organismo.
+
+-   [*Proteoma*]{.underline}: a totalidade das proteínas de um organismo.
+
+-   [*Metaboloma*]{.underline}: a totalidade dos metabólitos num organismo.
+
+-   [*Interatoma*]{.underline}: a totalidade das interações moleculares em um organismo.
+
+## Repositórios
+
+![](images/repositorios.png)
+
+## Systems Biology Approaches
+
+![](images/approach1.png){width="315"} ![](images/approach2.png){width="223"}
+
+## Redes de interação
+
+![Conceitos topológicos de Rede](images/rededeinteração.png){fig-align="center"}
+
+## Redes Direcionais
+
+![Conceitos topológicos de Rede](images/rededirecional1.png){width="266"} ![](images/rededirecional2.png){width="171"} ![](images/rededirecional3.png){width="199"}
+
+## Matriz de Adjacência
+
+![](images/matrizdeadjacencia.png){fig-align="center" width="419"}
+
+## Propriedades Topológicas
+
+![](images/propriedadestopologicas.png){fig-align="center"}
+
+## Redes Direcionais
+
+![](images/redesdirecionais.png){fig-align="center" width="552"}
+
+## Protein-Protein Interaction Network
+
+![](images/ppinetwork.png){width="386"} ![](images/ppienrich.png){width="257"}
+
+## Bancos de Informações Metabólicas
+
+-   [KEGG](www.genome.jp/kegg/)
+
+-   [Gene Ontology Consortium](http://www.geneontology.org/)
+
+-   [Reactome Pathway Database](www.reactome.org)
+
+## KEGG
+
+![](images/kegg.png){fig-align="center" width="537"}
+
+## Gene Ontology
+
+![](images/go.png){width="670"} ![](images/enrich.png){width="724"}
+
+## Enriquecimento Funcional
+
+![](images/renrich.png)
