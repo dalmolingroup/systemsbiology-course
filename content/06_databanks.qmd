@@ -1,0 +1,121 @@
+## Bancos de Dados Biológicos
+
+#### Nesta aula veremos: {.unnumbered}
+
+-   O que são bancos de dados;
+
+-   Para que servem;
+
+-   Classificação dos bancos de dados;
+
+-   Quais os principais bancos de dados utilizados na Biologia de Sistemas.
+
+## O que são Bancos de Dados Biológicos?
+
+::: callout-note
+“São grandes bibliotecas contendo informações sobre as ciências da vida, coletadas de experimentos científicos, literatura publicada, tecnologias de alto-desempenho e análises computacionais.” – Adaptado de Attwood et al., 2011
+:::
+
+### Os primeiros Bancos de Dados Biológicos.
+
+1.  Margareth Dayhoff e o estudo evolutivo de sequências proteicas
+
+![](images/margareth.png){width="111"} ![](images/MatrizPAM.png){width="325"}
+
+2.  GenBank
+
+![](images/genbank.png)
+
+![](images/genbankNotes.png)
+
+### Como surgiram os Bancos de Dados?
+
+![](images/genbankGrowth.png)
+
+```{mermaid}
+flowchart LR
+  A(Desenvolvimento \n tecnológico) --> C{Obtenção de uma \n grande quantidade de dados}
+  B(Barateamento do custo \n das novas tecnologias) --> C{Obtenção de uma \n grande quantidade de dados}
+```
+
+![](images/comic.png){fig-align="center" width="223"}
+
+### Para que servem?
+
+1.  **Armazenar**, **organizar** e **compartilhar** dados de forma estruturada com o objetivo de facilitar a obtenção e visualização de dados;
+
+2.  Promover interfaces de desenvolvimento a fim de que seja possível integrar as informações entre os diferentes bancos de dados.
+
+3.  Integração dos “omics”;
+
+```{mermaid}
+flowchart LR
+  A(Genomics) <--> B(Transcriptomics)
+  A(Genomics) <--> C(Proteomics)
+  A(Genomics) <--> D(Glycomics)
+  A(Genomics) <--> E(Metabolomics)
+  B(Transcriptomics) <--> C(Proteomics)
+  B(Transcriptomics) <--> D(Glycomics)
+  B(Transcriptomics) <--> E(Metabolomics)
+  C(Proteomics) <--> D(Glycomics)
+  C(Proteomics) <--> E(Metabolomics)
+  D(Glycomics) <--> E(Metabolomics)
+```
+
+3.  "Big Data" na biologia: em TI, refere-se a um grande conjunto de dados armazenados.
+
+### Classificação dos Bancos de Dados Biológicos
+
+-   Cobertura de dados
+    -   **Abrangente**: possui diferentes tipos de dados de diferentes espécies
+    -   **Especializado**: possui um único tipo de dado para um determinado organismo.
+-   Nível de biocuradoria
+    -   **Primário**: Possui os dados brutos provenientes de alguma técnica/experimento.
+    -   **Secundário**: Possui informações curadas
+-   Método de biocuradoria
+    -   **Curado por especialistas**: Normalmente, um único grupo é responsável pela tarefa
+    -   **Curado pela comunidade**: vários pesquisadores colaboram para a curadoria
+-   Tipo de dados
+    -   DNA, RNA, proteínas, dados de expressão (single-cell, RNA-seq, microarray), vias metabólicas, redes de interação entre biomoléculas, doenças, drogas, químicos, etc.
+
+\### Informações contidas nos Bancos
+
++---------------------+----------------------------------------------------+---------------------------------------+
+| Tipo de Banco       | Tipo de Informação                                 | Exemplo                               |
++=====================+====================================================+:=====================================:+
+| Bibliografia        | Literatura científica publicada                    | PUBMED                                |
++---------------------+----------------------------------------------------+---------------------------------------+
+| Taxonomia           | Classificação Taxonômica                           | TimeTree                              |
++---------------------+----------------------------------------------------+---------------------------------------+
+| Ácidos Nucleicos    | Informações sobre sequências de DNA/RNA            | GenBank, ENA                          |
++---------------------+----------------------------------------------------+---------------------------------------+
+| Proteína/Proteômica | Informações sobre estrutura funcional de proteínas | UniProt                               |
++---------------------+----------------------------------------------------+---------------------------------------+
+| Domínios Funcionais | Classificação de proteínas em famílias             | PFAM, CCD                             |
+|                     |                                                    |                                       |
+| e Motivos           |                                                    |                                       |
++---------------------+----------------------------------------------------+---------------------------------------+
+| Enzimas e rotas     | Rotas Bioquímicas                                  | Reactome, KEGG Pathway, Gene Ontology |
+|                     |                                                    |                                       |
+| metabólicas         |                                                    |                                       |
++---------------------+----------------------------------------------------+---------------------------------------+
+| Ortologia           | Informações sobre homologia de genes               | STRING, KEGG Orthology                |
++---------------------+----------------------------------------------------+---------------------------------------+
+
+## Bancos de Dados mais utilizados na Biologia de Sistemas
+
+### KEGG – Kyoto Encyclopedia of Genes and Genomes
+
+-   Foi originalmente desenvolvida como um banco de dados integrado para a interpretação de dados biológicos de genomas completamente sequenciados, tentando criar mapas de vias a partir dos genes recém-mapeados.
+
+-   Com o tempo, esta plataforma tornou-se amplamante usada não apenas para a análise de dados genômicos, mas também para análise de transcriptômica, proteômica, glicômica, metabolômica, metagenômica, etc.
+
+-   É um dos repositórios mais utilizados, devido ao fato de que as informações nele contidas são curadas manualmente e frequentemente.
+
+-   [KEGG](https://www.genome.jp/kegg/)
+
+![](images/keggdb.png)
+
+![](images/keggoverview.png){width="200"}
+
+![](images/keggoverviewdata.png){width="281"}

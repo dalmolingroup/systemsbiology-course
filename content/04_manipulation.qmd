@@ -31,7 +31,7 @@ letter[c(1, 4)]         #usamos a funcao c() para valores nao contiguos
 letter[-2]              #usamos numeros negativos para excluir um ou mais valores
 letter[c(-2, -5)]
 
-idx <- c(1, 4)            #podemos criar indices numericos
+idx <- c(1, 4)          #podemos criar indices numericos
 letter[idx]
 
 x<-1:10                 
