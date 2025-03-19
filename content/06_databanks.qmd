@@ -194,11 +194,20 @@ flowchart LR
 ### GEO Datasets - Gene Expression Omnibus Datasets
 
 -   Banco de dados norte-americano, mantido pelo NCBI;
-
 -   Contém dados de microarray e RNA-seq.
 
-![](images/geodatasets.png) ![](images/geoexample.png){fig-align="center" width="427"}
+![](images/geodatasets.png) ![](images/geoexample1.png)![](images/geoexample2.png){width="705"}
 
-::: {.callout-tip}
+::: callout-tip
 É possível fazer o dowload do dado bruto obtido do experimento e utiliza-lo nas análises.
 :::
+
+### Array Express
+
+-   Banco de dados europeu, possui o mesmo escopo do GEO.
+
+![](images/arrayexpress.png)
+
+### SRA - Sequence Read Archive
+
+![](images/sra.png)
