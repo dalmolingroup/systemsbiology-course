@@ -116,7 +116,7 @@ flowchart LR
 
 ![](images/keggdb.png)
 
-![](images/keggoverview.png){width="258"} ![](images/keggoverviewdata.png){width="364"}
+![](images/keggoverview.png){width="276"} ![](images/keggoverviewdata.png){width="391"}
 
 #### KEGG Pathway
 
@@ -166,3 +166,39 @@ flowchart LR
 -   Utiliza uma ontologia própria para classificar as reações e processos metabólicos;
 -   Principal vantagem: muito interativo e didático!
 -   [Reactome](https://reactome.org/)
+
+![](images/reactome.png)
+
+![](images/reactomebrowser.png)
+
+![](images/rectomemetabolism.png)
+
+### STRING
+
+-   `S`earch `T`ool for the `R`etrieval of `In`teracting `G`enes/Proteins
+-   É um dos principais bancos de dados de interação proteína-proteína
+
+![](images/stringdb.png) ![](images/stringsearch.png)
+
+-   Utiliza informações experimentais, registros da literatura e anotações funcionais.
+
+-   Basicamente, tem dois tipos de entradas:
+
+    -   Busca de interações feitas por um determinado gene/proteína
+    -   Busca de grupos de ortólogos de um ou mais genes/proteínas
+
+![](images/stringppi.png){fig-align="center" width="660"} ![](images/stringinteractions.png)
+
+## Bancos de Dados Primários - Buscando Dados Brutos para Reanálise
+
+### GEO Datasets - Gene Expression Omnibus Datasets
+
+-   Banco de dados norte-americano, mantido pelo NCBI;
+
+-   Contém dados de microarray e RNA-seq.
+
+![](images/geodatasets.png) ![](images/geoexample.png){fig-align="center" width="427"}
+
+::: {.callout-tip}
+É possível fazer o dowload do dado bruto obtido do experimento e utiliza-lo nas análises.
+:::
