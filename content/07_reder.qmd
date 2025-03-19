@@ -1,6 +1,7 @@
 ## RedeR Workflow
 
 Instalar o pacote RedeR (caso já tenha instalado, não rodar estas linhas)
+
 ```{r eval=FALSE}
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
@@ -8,13 +9,138 @@ BiocManager::install("RedeR")
 ```
 
 ## Carregue o pacote RedeR
-```{r eval=FALSE}
+
+```{r }
 library(RedeR)
 library(igraph)
 ```
 
+::: callout-warning
 Este exercício foi feito baseado na vinheta do RedeR. Use-o para tirar dúvidas.
+:::
+
 ```{r eval=FALSE}
 vignette('RedeR')
+```
+
+Inicie o aplicativo RedeR:
+
+```{r eval=FALSE}
+# Se sua versão do RedeR for > v. 3.0
+RedeR::startRedeR()
+
+#Se sua versão do RedeR for < 3.0
+rdp <- RedPort()
+calld(rdp)
+```
+
+Armazene os dados de expressão diferencial 'ER.limma' e os dados do interatoma 'hs.inter'em outros objetos
+
+```{r}
+data(ER.limma)
+data(hs.inter)
+```
+
+`ER.limma` é o resultado de uma análise de expressão diferencial, que veremos adiante nesta disciplina. Basicamente, a análise de expressão visa comparar a expressão de genes em diferentes estados celulares e identificar quais genes tem aumento da expressão e quais genes tem expressão diminuída de uma condição para outra.
+
+Neste experimento, `células epiteliais mamárias` foram estimuladas com estrógeno por `3, 6 e 12 horas`. O que buscaremos aqui é a `comparação da expressão em uma determinada hora com a hora inicial` (hora 0).
+
+O dataframe `ER.limma` possui colunas com os identificadores dos genes (`ENTREZ id` e `gene symbol`), o `fold change` da variação da expressão (**valores positivos indicam que o gene está upregulado, enquanto que valores negativos indicam que o gene está downregulado**) para cada comparação de tempo, os `p-valores` associados a cada inferência e as colunas `degenes`, que mostram quais genes estão diferencialmente expressos (**1 = gene upregulado**, **0 = gene não está diferencialmente expresso**, **-1 = gene downregulado**).
+
+::: callout-tip
+Por exemplo: a coluna 'logFC.t3' mostra a mudança na expressão de um determinado gene (as linhas da tabela) da terceira hora com relação à hora 0. A coluna 'degenes.t3' mostra qualitativamente se aquele gene em questao é diferencialmente expresso na comparação 3h-0h.
+:::
+
+```{r}
+dt <- ER.limma
+gi <- hs.inter
+```
+
+Vamos construir subgrafos que representem a expressão dos genes nas comparações 3h-0h, 6h-0h e 12h-0h.
+
+`3h`
+
+```{r}
+gt3 <- subg(g=gi, dat=dt[dt$degenes.t3!=0,], refcol=1)
+gt3 <- att.setv(g=gt3, from="Symbol", to="nodeAlias")
+gt3 <- att.setv(g=gt3, from="logFC.t3", to="nodeColor", breaks=seq(-2,2,0.4), pal=2)
+```
+
+`6h`
+
+```{r}
+gt6 <- subg(g=gi, dat=dt[dt$degenes.t6!=0,], refcol=1)
+gt6 <- att.setv(g=gt6, from="Symbol", to="nodeAlias")
+gt6 <- att.setv(g=gt6, from="logFC.t6", to="nodeColor", breaks=seq(-2,2,0.4), pal=2)
+```
+
+`12h`
+
+```{r}
+gt12 <- subg(g=gi, dat=dt[dt$degenes.t12!=0,], refcol=1)
+gt12 <- att.setv(g=gt12, from="Symbol", to="nodeAlias")
+gt12 <- att.setv(g=gt12, from="logFC.t12", to="nodeColor", breaks=seq(-2,2,0.4), pal=2)
+```
+
+::: {.callout-tip collapse="true"}
+## Use a ajuda do R e responda: O que a função `subg()` faz? O que o argumento `dat=dt[dt$degenes.t3!=0,]` significa?
+
+A função subg() do pacote RedeR cria subgrafos a partir de um grafo existente, extraindo um subconjunto de nós e conexões com base em critérios específicos. O argumento dat=dt[dt$degenes.t3!=0,] filtra o data frame dt, incluindo apenas as linhas onde a coluna degenes.t3 é diferente de zero (genes diferencialmente expressos).
+:::
+
+::: {.callout-tip collapse="true"}
+O que a função `att.setv()` faz? O que os argumentos `g`, `from`, `to` designam?
+
+A função `att.setv()` do pacote RedeR atribui valores a atributos dos vértices (nós) em um grafo. O argumento `g` representa o grafo ao qual os atributos serão atribuídos, enquanto `from` especifica o nome do atributo a ser modificado e `to` define os valores que serão atribuídos a esse atributo para os respectivos nós.
+:::
+
+Agora que contruimos os subgráficos, vamos adicioná-los à interface gráfica do RedeR:
+```{r eval=FALSE}
+# Se a versão do RedeR for > 3.0 a função será addGraphToRedeR()
+addGraph(rdp, gt3, gcoord=c(10,25), gscale=20, isNest=TRUE, theme= 'tm1' , zoom=30)
+addGraph(rdp, gt6, gcoord=c(20,70), gscale=50, isNest=TRUE, theme= 'tm1' , zoom=30)
+addGraph(rdp, gt12, gcoord=c(70,55), gscale=80, isNest=TRUE, theme= 'tm1' , zoom=30)
+```
+
+Vamos construir o subgrafos aninhados, ou seja, vamos sobrepor as séries temporais.
+```{r eval=FALSE}
+nestNodes(rdp, nodes=V(gt3)$name, parent="N1", theme= 'tm2')
+nestNodes(rdp, nodes=V(gt6)$name, parent="N2", theme= 'tm2')
+nestNodes(rdp, nodes=V(gt3)$name, parent="N4", theme= 'tm3')
+```
+
+::: {.callout-tip}
+O argumento 'theme' determina os temas ('tm0','tm1','tm2','tm3','tm4','tm5', 'tm6') de apresentação dos ninhos. 
+Experimente mudá-los e rode novamente os comandos acima.
+:::
+
+Vamos concatenar as arestas que estão fora dos ninhos. 
+```{r}
+mergeOutEdges(rdp)
+```
+
+Relaxar a rede
+```{r}
+relax(rdp,50,400)
+```
+
+Perceba que temos 3 grandes redes aninhadas: N0, que é um subgrafo mostrando os genes diferencialmente expressos na comparação 3-0h, o N1, que possui os subgrafos das comparações 3-0h e 6h-0h, e a N2 que possui os subgrafos das comparações 3-0h, 6-0h e 12-0h.
+
+Agora vamos adicionar uma legenda:
+```{r}
+scl <- gt3$legNodeColor$scale 
+leg <- gt3$legNodeColor$legend 
+addLegend.color(rdp, colvec=scl, labvec=leg, title="Downregulated - Upregulated")
+```
+
+::: {.callout-tip collapse="true"}
+Observe a rede formada. O que as cores dos nós representam?
+
+As cores dos nós na rede representam a regulação gênica, onde azul indica genes downregulados e vermelho indica genes upregulados, refletindo sua expressão diferencial.
+:::
+
+Para resetar a interface grafica:
+```{r}
+resetd(rdp)
 ```
 
