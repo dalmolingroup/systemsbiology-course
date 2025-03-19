@@ -212,7 +212,7 @@ flowchart LR
 
 ![](images/sra.png)
 
-## Referências
+## Referências {.unnumbered}
 
 1.  Zou D, Ma L, Yu J, Zhang Z. Biological Databases for Human Research. Genomics Proteomics Bioinformatics. 2015;13:55-63. doi:10.1016/j.gpb.2015.01.006.
 
