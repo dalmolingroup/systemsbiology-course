@@ -89,7 +89,7 @@ A função subg() do pacote RedeR cria subgrafos a partir de um grafo existente,
 :::
 
 ::: {.callout-tip collapse="true"}
-O que a função `att.setv()` faz? O que os argumentos `g`, `from`, `to` designam?
+## O que a função `att.setv()` faz? O que os argumentos `g`, `from`, `to` designam?
 
 A função `att.setv()` do pacote RedeR atribui valores a atributos dos vértices (nós) em um grafo. O argumento `g` representa o grafo ao qual os atributos serão atribuídos, enquanto `from` especifica o nome do atributo a ser modificado e `to` define os valores que serão atribuídos a esse atributo para os respectivos nós.
 :::
