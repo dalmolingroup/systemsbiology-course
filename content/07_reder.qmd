@@ -115,19 +115,19 @@ Experimente mudá-los e rode novamente os comandos acima.
 :::
 
 Vamos concatenar as arestas que estão fora dos ninhos. 
-```{r}
+```{r eval=FALSE}
 mergeOutEdges(rdp)
 ```
 
 Relaxar a rede
-```{r}
+```{r eval=FALSE}
 relax(rdp,50,400)
 ```
 
 Perceba que temos 3 grandes redes aninhadas: N0, que é um subgrafo mostrando os genes diferencialmente expressos na comparação 3-0h, o N1, que possui os subgrafos das comparações 3-0h e 6h-0h, e a N2 que possui os subgrafos das comparações 3-0h, 6-0h e 12-0h.
 
 Agora vamos adicionar uma legenda:
-```{r}
+```{r eval=FALSE}
 scl <- gt3$legNodeColor$scale 
 leg <- gt3$legNodeColor$legend 
 addLegend.color(rdp, colvec=scl, labvec=leg, title="Downregulated - Upregulated")
@@ -140,7 +140,7 @@ As cores dos nós na rede representam a regulação gênica, onde azul indica ge
 :::
 
 Para resetar a interface grafica:
-```{r}
+```{r eval=FALSE}
 resetd(rdp)
 ```
 
