@@ -78,7 +78,7 @@ flowchart LR
 -   Tipo de dados
     -   DNA, RNA, proteínas, dados de expressão (single-cell, RNA-seq, microarray), vias metabólicas, redes de interação entre biomoléculas, doenças, drogas, químicos, etc.
 
-\### Informações contidas nos Bancos
+### Informações contidas nos Bancos
 
 +---------------------+----------------------------------------------------+---------------------------------------+
 | Tipo de Banco       | Tipo de Informação                                 | Exemplo                               |
@@ -116,6 +116,53 @@ flowchart LR
 
 ![](images/keggdb.png)
 
-![](images/keggoverview.png){width="200"}
+![](images/keggoverview.png){width="258"} ![](images/keggoverviewdata.png){width="364"}
 
-![](images/keggoverviewdata.png){width="281"}
+#### KEGG Pathway
+
+-   Conjunto de vias manualmente curadas que integram todas as informações contidas nos outros bancos de dados do KEGG.
+-   As vias são classificadas em:
+    -   Metabolismo
+    -   Processamento da informação genética
+    -   Processamento da informação ambiental
+    -   Processos celulares
+    -   Sistemas de organismos
+    -   Doenças humanas
+    -   Desenvolvimento de drogas
+
+![](images/keggpathway.png)
+
+#### KEGG Module
+
+-   O KEGG Module funciona como o KEGG Pathway, porém possui informações mais detalhadas sobre um determinado módulo funcional de uma via metabólica.
+    -   Rotas
+    -   Complexos estruturais
+    -   Funcionais
+    -   De assinatura
+
+#### KEGG Orthology (KO)
+
+-   Sua proposta é agrupar os genes contidos no KEGG Genes de acordo com similaridades na sequência e dados do KEGG Pathway, Module e BRITE.
+
+![](images/keggko.png)
+
+### GO - Gene Ontology
+
+-   É um projeto colaborativo que busca estabelecer descrições consistentes para produtos gênicos.
+-   Surgiu como uma forma de “padronizar” os termos biológicos utilizados para descrever as funções dos produtos de genes de todas as espécies.
+-   Possui um vocabulário de termos definidos, sendo dividido em três domínios:
+    -   **Componentes celulares**: partes da célula ou do ambiente extracelular onde o produto gênico fica localizado
+    -   **Função molecular**: atividade do produto gênico em nível molecular
+    -   **Processo biológico**: rota metabólica que o produto gênico faz parte, por exemplo.
+    -   [GeneOntology](https://geneontology.org/)
+
+![](images/geneontologymermaid.png)
+
+### Reactome
+
+-   Base de dados curados de vias e reações na biologia;
+-   O Reactome utiliza o termo “reação” de forma mais ampla: inclui mudanças de estados de proteínas, como ligação, ativação, translocação e degradação;
+-   É integrado a outros bancos de dados (NCBI, Ensembl, UniProt, KEGG, GO, etc.);
+-   Utiliza uma ontologia própria para classificar as reações e processos metabólicos;
+-   Principal vantagem: muito interativo e didático!
+-   [Reactome](https://reactome.org/)
