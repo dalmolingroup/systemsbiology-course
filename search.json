@@ -154,7 +154,7 @@
     "href": "content/02_history.html",
     "title": "2  Histórico da linguagem R",
     "section": "",
-    "text": "2.1 Instalação do R\nO interpretador da linguagem R pode ser instalado em Linux, Mac e Windows1, e encontra-se disponível gratuitamente no Comprehensive R Archive Network (CRAN).",
+    "text": "2.1 Instalação do R\nJohn Chambers iniciou a criação de um ambiente de análises estatísticas em 1976 no Bell Telephone Laboratories, também conhecido como Bell Labs. Naquela época a computação estatística costumava ser feita por meio de chamadas diretas às funções de bibliotecas Fortran, e tal ambiente foi projetado para oferecer uma abordagem alternativa, mais interativa, e com funções de documentação acessível. Este ambiente foi denominado de ‘S’ e após 1979 o nome passou a ser usado sem as aspas simples.\nEm 1988 foi lançada a versão S3, muitas mudanças foram feitas na sintaxe da linguagem, estendendo o conceito de objetos, e novas funcionalidades possibilitavam a passagem de funções para outras funções, como o uso do apply. Foi publicado o livro The New S Language para introduzir as novas funcionalidades e ajudar os usuários a entender como os códigos deveriam ser escritos.\nA linguagem R foi criada em 1991, como uma variante da linguagem S, por Ross Ihaka e Robert Gentleman no Departamento de Estatística da Universidade de Auckland, e foi anunciada para o público em 1993. Neste mesmo ano, a Bell Labs concedeu uma licença exclusiva à StatSci, que posteriormente virou a Insightful Corporation, para desenvolver e vender a linguagem S. A Insightful Corporation adicionou algumas funcionalidades à linguagem, como a adição de uma interface gráfica, e vendia esta implementação como o produto S-PLUS.\nUma das limitações da linguagem S era que ela só estava disponível no pacote comercial S-PLUS, e em 1995, Martin Mächler convenceu Ross e Robert a usarem a GNU General Public License, tornando o R um software livre. Em 1998 foi lançada a última versão da linguagem S, conhecida como S4, que fornecia funcionalidades avançadas de orientação a objetos. Em 2000 a versão 1.0.0 da linguagem R foi lançada publicamente. E em 2008 a TIBCO Software Incorporation adquiriu a Insightful Corporation por 25 milhões de dólares.\nO interpretador da linguagem R pode ser instalado em Linux, Mac e Windows1, e encontra-se disponível gratuitamente no Comprehensive R Archive Network (CRAN).",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Histórico da linguagem R</span>"
     ]
@@ -182,7 +182,7 @@
   {
     "objectID": "content/03_operation.html",
     "href": "content/03_operation.html",
-    "title": "\n3  Funcionamento básico\n",
+    "title": "3  Funcionamento básico",
     "section": "",
     "text": "3.1 Operadores\n2+5         #Adicao                     \n5-2         #Subtracao\n2*5         #Multiplicacao\n8/2         #Divisao\n2^5         #Exponenciacao\n5%%2        #Resto da divisão\n3==5          #Igual\n3!=5          #Diferente\n3&gt;5         #Maior que\n3&lt;5         #Menor que\n3&gt;=5          #Maior ou igual\n3&lt;=5          #Menor ou igual\n((2+5-3)*10)^4/7^4",
     "crumbs": [
@@ -192,7 +192,7 @@
   {
     "objectID": "content/03_operation.html#operadores",
     "href": "content/03_operation.html#operadores",
-    "title": "\n3  Funcionamento básico\n",
+    "title": "3  Funcionamento básico",
     "section": "",
     "text": "Aritmetica basica\n\n\n\nRelacionais\n\n\n\nOperações podem ser concatenadas:",
     "crumbs": [
@@ -202,8 +202,8 @@
   {
     "objectID": "content/03_operation.html#variáveis",
     "href": "content/03_operation.html#variáveis",
-    "title": "\n3  Funcionamento básico\n",
-    "section": "\n3.2 Variáveis",
+    "title": "3  Funcionamento básico",
+    "section": "3.2 Variáveis",
     "text": "3.2 Variáveis\nA seta “&lt;-” representa o simbolo de atribuição e ao escrever o nome do objeto, seu valor sera impresso. Veja o exemplo:\n\nx &lt;- 1\nx\n\n[1] 1\n\n\nCaso algum valor seja atribuído ao mesmo objeto, ele será sobrescrito:\n\nx &lt;- \"gol do gremio!\"\nx\n\n[1] \"gol do gremio!\"\n\n\nOs resultados de operações podem ser salvos em objetos:\n\nx&lt;-2+5\ny=5-2\n2*5-&gt;w\nz&lt;-8/2\n\nresultado &lt;- (((x-y)*w)^z)/(x^z)\nresultado\n\n[1] 1066.222",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -212,8 +212,8 @@
   {
     "objectID": "content/03_operation.html#funções",
     "href": "content/03_operation.html#funções",
-    "title": "\n3  Funcionamento básico\n",
-    "section": "\n3.3 Funções",
+    "title": "3  Funcionamento básico",
+    "section": "3.3 Funções",
     "text": "3.3 Funções\nChamando funções:\n\nsum(1,3,5)\n\n[1] 9\n\na &lt;- rep(\"Aluno\",times=3)\na\n\n[1] \"Aluno\" \"Aluno\" \"Aluno\"",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -222,8 +222,8 @@
   {
     "objectID": "content/03_operation.html#acessando-a-documentação",
     "href": "content/03_operation.html#acessando-a-documentação",
-    "title": "\n3  Funcionamento básico\n",
-    "section": "\n3.4 Acessando a documentação",
+    "title": "3  Funcionamento básico",
+    "section": "3.4 Acessando a documentação",
     "text": "3.4 Acessando a documentação\nEstas funções buscam e exibem a documentação de funções:\n\nhelp(sum)\n?sd\n??plot",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -232,8 +232,8 @@
   {
     "objectID": "content/03_operation.html#vetores",
     "href": "content/03_operation.html#vetores",
-    "title": "\n3  Funcionamento básico\n",
-    "section": "\n3.5 Vetores",
+    "title": "3  Funcionamento básico",
+    "section": "3.5 Vetores",
     "text": "3.5 Vetores\nfuncao c() : concatenate\n\nnumber &lt;- c(1, 2, 3, 4, 5)\nletter &lt;- c(\"x\", \"y\", \"z\", \"w\", \"j\")\nlogical &lt;- c(TRUE, FALSE, FALSE, TRUE, FALSE)\nseq &lt;- 1:10\n\nHierarquia de classes\n\nx &lt;- c(1, 2, 3)                   # Numeric\ny &lt;- c(\"1\", \"2\", \"3\")             # Character\nx &lt;- c(TRUE, FALSE, FALSE)        # Logical\ny &lt;- c(\"TRUE\", \"FALSE\", \"FALSE\")  # Character\n\nPodemos somar vetores logicos\n\nsum(logical) \n\n[1] 2\n\n\n\n\n\n\n\n\nVetores comportam somente uma classe de elementos\n\n\n\nCoerção de objetos usando funções do tipo as.algumacoisa()\n\nx &lt;- 0:10\nx\n\n [1]  0  1  2  3  4  5  6  7  8  9 10\n\nclass(x)\n\n[1] \"integer\"\n\na &lt;- as.numeric(x)\na\n\n [1]  0  1  2  3  4  5  6  7  8  9 10\n\nclass(a)\n\n[1] \"numeric\"\n\nb &lt;- as.character(x)\nb\n\n [1] \"0\"  \"1\"  \"2\"  \"3\"  \"4\"  \"5\"  \"6\"  \"7\"  \"8\"  \"9\"  \"10\"\n\nclass(b)\n\n[1] \"character\"\n\nc &lt;- as.logical(x)\nc\n\n [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n\nclass(c)\n\n[1] \"logical\"\n\n\nVetores de NA\n\nx &lt;- c(1, 2, 3, NA)\ny &lt;- c(\"a\", \"b\", \"c\", NA)\n\nis.na(x)\n\n[1] FALSE FALSE FALSE  TRUE\n\n\n\na &lt;- c(1, 3, NA, 7, 9)\nsum(a)\n\n[1] NA\n\nsum(a, na.rm=TRUE)\n\n[1] 20\n\n\nObjetos possuem atributos: classe, tamanho, dimensoes, nomes, etc\n\nx &lt;- 1:5\nx\n\n[1] 1 2 3 4 5\n\nlength(x)\n\n[1] 5\n\ndim(x)\n\nNULL\n\nattributes(x)\n\nNULL\n\nnames(x) &lt;- c(\"a\", \"b\", \"c\", \"d\", \"e\")\nx\n\na b c d e \n1 2 3 4 5 \n\nattributes(x)\n\n$names\n[1] \"a\" \"b\" \"c\" \"d\" \"e\"",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -242,8 +242,8 @@
   {
     "objectID": "content/03_operation.html#factor",
     "href": "content/03_operation.html#factor",
-    "title": "\n3  Funcionamento básico\n",
-    "section": "\n3.6 Factor",
+    "title": "3  Funcionamento básico",
+    "section": "3.6 Factor",
     "text": "3.6 Factor\nFatores sao vetores categóricos, possuem o atributo level\n\nx &lt;- factor(c(\"s\", \"n\", \"n\", \"s\", \"s\"))\nz &lt;- factor(c(\"alto\", \"baixo\", \"medio\"))",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -252,8 +252,8 @@
   {
     "objectID": "content/03_operation.html#matrix",
     "href": "content/03_operation.html#matrix",
-    "title": "\n3  Funcionamento básico\n",
-    "section": "\n3.7 Matrix",
+    "title": "3  Funcionamento básico",
+    "section": "3.7 Matrix",
     "text": "3.7 Matrix\nMatrizes são vetores com o atributo dimensão\n\nx &lt;- 1:20\nx\n\n [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20\n\nattributes(x)\n\nNULL\n\nm &lt;- matrix(x, 4, 5)\nm\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    1    5    9   13   17\n[2,]    2    6   10   14   18\n[3,]    3    7   11   15   19\n[4,]    4    8   12   16   20\n\nattributes(m)          \n\n$dim\n[1] 4 5\n\ndim(x) &lt;- c(4,5)\nx\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    1    5    9   13   17\n[2,]    2    6   10   14   18\n[3,]    3    7   11   15   19\n[4,]    4    8   12   16   20\n\nidentical(x, m)\n\n[1] TRUE\n\n\n\n\n\n\n\n\nComo são vetores, matrizes comportam somente uma classe de elementos\n\n\n\nManipulação de matrizes\n\na &lt;- 1:5\nb &lt;- -1:-5\nc &lt;- c(3, 6, 4, 9, 1)\n\nm &lt;- cbind(a, b, c)       #funcao cbind() concatena colunas\nm1 &lt;- rbind(a, b, c)      #funcao rbind() concatena linhas",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -262,8 +262,8 @@
   {
     "objectID": "content/03_operation.html#array",
     "href": "content/03_operation.html#array",
-    "title": "\n3  Funcionamento básico\n",
-    "section": "\n3.8 Array",
+    "title": "3  Funcionamento básico",
+    "section": "3.8 Array",
     "text": "3.8 Array\nSão vetores multidimensionais\n\nar &lt;- array(1:200, c(5, 10, 4))    \nar\n\n, , 1\n\n     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n[1,]    1    6   11   16   21   26   31   36   41    46\n[2,]    2    7   12   17   22   27   32   37   42    47\n[3,]    3    8   13   18   23   28   33   38   43    48\n[4,]    4    9   14   19   24   29   34   39   44    49\n[5,]    5   10   15   20   25   30   35   40   45    50\n\n, , 2\n\n     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n[1,]   51   56   61   66   71   76   81   86   91    96\n[2,]   52   57   62   67   72   77   82   87   92    97\n[3,]   53   58   63   68   73   78   83   88   93    98\n[4,]   54   59   64   69   74   79   84   89   94    99\n[5,]   55   60   65   70   75   80   85   90   95   100\n\n, , 3\n\n     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n[1,]  101  106  111  116  121  126  131  136  141   146\n[2,]  102  107  112  117  122  127  132  137  142   147\n[3,]  103  108  113  118  123  128  133  138  143   148\n[4,]  104  109  114  119  124  129  134  139  144   149\n[5,]  105  110  115  120  125  130  135  140  145   150\n\n, , 4\n\n     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n[1,]  151  156  161  166  171  176  181  186  191   196\n[2,]  152  157  162  167  172  177  182  187  192   197\n[3,]  153  158  163  168  173  178  183  188  193   198\n[4,]  154  159  164  169  174  179  184  189  194   199\n[5,]  155  160  165  170  175  180  185  190  195   200\n\nar[,,1]                            #[linha, coluna, matrix]\n\n     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n[1,]    1    6   11   16   21   26   31   36   41    46\n[2,]    2    7   12   17   22   27   32   37   42    47\n[3,]    3    8   13   18   23   28   33   38   43    48\n[4,]    4    9   14   19   24   29   34   39   44    49\n[5,]    5   10   15   20   25   30   35   40   45    50",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -272,8 +272,8 @@
   {
     "objectID": "content/03_operation.html#list",
     "href": "content/03_operation.html#list",
-    "title": "\n3  Funcionamento básico\n",
-    "section": "\n3.9 List",
+    "title": "3  Funcionamento básico",
+    "section": "3.9 List",
     "text": "3.9 List\nListas são tipos especiais de vetores, que comportam elementos de deferentes classes. cada elemento da lista aparece com [[]]\n\na &lt;- c(1, 3, NA, 7, 9)\nb&lt;-matrix(1:200, 20,10)\nc&lt;-\"Gol do Gremio\"\nz&lt;-factor(c(\"alto\", \"baixo\", \"medio\"))\n\nls&lt;-list(a, b, c, z)\nls                       \n\n[[1]]\n[1]  1  3 NA  7  9\n\n[[2]]\n      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n [1,]    1   21   41   61   81  101  121  141  161   181\n [2,]    2   22   42   62   82  102  122  142  162   182\n [3,]    3   23   43   63   83  103  123  143  163   183\n [4,]    4   24   44   64   84  104  124  144  164   184\n [5,]    5   25   45   65   85  105  125  145  165   185\n [6,]    6   26   46   66   86  106  126  146  166   186\n [7,]    7   27   47   67   87  107  127  147  167   187\n [8,]    8   28   48   68   88  108  128  148  168   188\n [9,]    9   29   49   69   89  109  129  149  169   189\n[10,]   10   30   50   70   90  110  130  150  170   190\n[11,]   11   31   51   71   91  111  131  151  171   191\n[12,]   12   32   52   72   92  112  132  152  172   192\n[13,]   13   33   53   73   93  113  133  153  173   193\n[14,]   14   34   54   74   94  114  134  154  174   194\n[15,]   15   35   55   75   95  115  135  155  175   195\n[16,]   16   36   56   76   96  116  136  156  176   196\n[17,]   17   37   57   77   97  117  137  157  177   197\n[18,]   18   38   58   78   98  118  138  158  178   198\n[19,]   19   39   59   79   99  119  139  159  179   199\n[20,]   20   40   60   80  100  120  140  160  180   200\n\n[[3]]\n[1] \"Gol do Gremio\"\n\n[[4]]\n[1] alto  baixo medio\nLevels: alto baixo medio\n\n\nA função vector pode criar listas vazias\n\nls1&lt;-vector(\"list\", 5)  \nls1\n\n[[1]]\nNULL\n\n[[2]]\nNULL\n\n[[3]]\nNULL\n\n[[4]]\nNULL\n\n[[5]]\nNULL",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -282,8 +282,8 @@
   {
     "objectID": "content/03_operation.html#data-frame",
     "href": "content/03_operation.html#data-frame",
-    "title": "\n3  Funcionamento básico\n",
-    "section": "\n3.10 Data Frame",
+    "title": "3  Funcionamento básico",
+    "section": "3.10 Data Frame",
     "text": "3.10 Data Frame\nFormado por vetores de mesmo tamanho, organizados como colunas\n\nnumber&lt;-c(1, 2, 3, 4, 5)\nletter&lt;-c(\"x\", \"y\", \"z\", \"w\", \"j\")\nlogical&lt;- c(TRUE, FALSE, FALSE, TRUE, FALSE)\nseq&lt;-1:10\n\ndt&lt;-data.frame(number, letter, logical)\nclass(dt)\n\n[1] \"data.frame\"\n\ndt$letter                     #usamos $ para acessar as colunas de um data.frame\n\n[1] \"x\" \"y\" \"z\" \"w\" \"j\"\n\nclass(dt$letter)              #vetores de caracter sao interpretados como fatores\n\n[1] \"character\"\n\ndt&lt;-data.frame(number, letter, logical, stringsAsFactors = F) #stringsAsFactors = F\ndt$letter\n\n[1] \"x\" \"y\" \"z\" \"w\" \"j\"\n\nclass(dt$letter)\n\n[1] \"character\"\n\nattributes(dt)                #data.frames possuem colnames e rownames\n\n$names\n[1] \"number\"  \"letter\"  \"logical\"\n\n$class\n[1] \"data.frame\"\n\n$row.names\n[1] 1 2 3 4 5\n\ncolnames(dt)\n\n[1] \"number\"  \"letter\"  \"logical\"\n\nrow.names(dt)\n\n[1] \"1\" \"2\" \"3\" \"4\" \"5\"\n\ndt[5,2]                       #acessamos data.frames da mesma forma que matrizes\n\n[1] \"j\"",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -292,9 +292,9 @@
   {
     "objectID": "content/03_operation.html#desafio",
     "href": "content/03_operation.html#desafio",
-    "title": "\n3  Funcionamento básico\n",
-    "section": "\n3.11 Desafio",
-    "text": "3.11 Desafio\n\n\n\n\n\n\nPratique sem IA!\n\n\n\nOs desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\nEvite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\nAprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀\n\n\nVetores:\nEm R, os vetores são um dos tipos mais básicos de objetos. Eles são parecidos com os vetores que vimos na matemática. A diferença é que aqui podemos ter vetores não só de números, mas também de letras (caracteres).\n\n\nUm vetor de números pode ser construído assim:\n\nnum &lt;- c(1,2,3,4)\n\nSe você executar essa linha acima terá criado um vetor com o nome de “num” que contém os elementos 1,2,3 e 4.\nPara criarmos um vetor, utilizamos a função “c()”.\n\n\n\nExperimente fazer um vetor chamado “num2” e que contenha os seguintes elementos: 1,a,3,b. Depois veja qual a classe dos elementos desse vetor usando a função class(). OBS: Não esqueça que letras e palavras tem de ser colocadas entre aspas.\nAgora crie um vetor num3 com os elementos: 1,2,3,4,5. Use a função class() para saber qual a classe dos elementos desse vetor\nPor que a classe dos vetores ‘num2’ e ‘num3’ é diferente?\n\n\nJosé e Paulo adoram jogar basquete nas suas horas livres. Eles mantém uma competição entre si e por isso decidiram registrar todos os pontos que eles marcam durante as partidas.\n\nAté agora foram 8 partidas:\n\nJosé fez 8, 10, 12, 9, 15, 16, 11, 7 cestas.\nPaulo fez 5, 11, 13, 14, 23, 14, 9, 10 cestas.\n\n\nCrie dois objetos que contenham o número de cestas que cada um fez:\nVerifique a classe de cada um dos objetos:\nCom a utilização da ajuda do R, procure por uma função que possibilite o cálculo de médias. Com ela, calcule as médias de cestas dos dois jogadores e atribua estes valores a objetos diferentes:\nCompare os valores das médias calculadas usando os operadores lógicos “&gt;” e “&lt;”. Quem teve um desempenho médio melhor?\nData Frames:\nVetores são muito úteis, mas na medida que trabalhamos com muitos tipos de vetores e com mais valores, fica mais complicado. Para contornar esse problema, nós temos em R um objeto chamado de Dataframe. O Dataframe é uma espécie de matriz: tem linhas e colunas. A diferença é: numa matriz, todos as colunas tem um mesmo tipo, enquanto em um data.frame podemos ter em cada coluna um tipo diferente de dado. Assim, dataframes podem ter uma coluna de um vetor numérico e outra de um vetor de caracteres.\nO data.frame ‘contagem’ mostra a quantidade de células contadas por 5 ICs diferentes durante a primeira semana de trabalho no laboratório.\n\ncontagem &lt;- data.frame(IC = c('Você','João','Fernanda','Júlio','Larissa'),\n                       semana_1 = c(30, 46, 50, 20, 10))\n\nNa segunda semana de experimento, todos os ICs do laboratório repetiram a contagem, e os números de células contadas foram: 10, 39, 55, 11, 20.\n\nCrie uma nova coluna neste mesmo dataframe chamada de ‘semana_2’ com estes números.\nO chefe do laboratório pediu para que os ICs mostrassem qual deles contou o maior e o menor número de células em cada semana. Procure por funções no R que mostre qual valor de contagem na semana 1 é maior e qual é o menor.",
+    "title": "3  Funcionamento básico",
+    "section": "3.11 Desafio",
+    "text": "3.11 Desafio\n\n\n\n\n\n\nPratique sem IA!\n\n\n\nOs desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\nEvite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\nAprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀\n\n\n\nVetores:\nEm R, os vetores são um dos tipos mais básicos de objetos. Eles são parecidos com os vetores que vimos na matemática. A diferença é que aqui podemos ter vetores não só de números, mas também de letras (caracteres).\n\nUm vetor de números pode ser construído assim:\n\nnum &lt;- c(1,2,3,4)\n\nSe você executar essa linha acima terá criado um vetor com o nome de “num” que contém os elementos 1,2,3 e 4.\nPara criarmos um vetor, utilizamos a função “c()”.\n\n\nExperimente fazer um vetor chamado “num2” e que contenha os seguintes elementos: 1,a,3,b. Depois veja qual a classe dos elementos desse vetor usando a função class(). OBS: Não esqueça que letras e palavras tem de ser colocadas entre aspas.\nAgora crie um vetor num3 com os elementos: 1,2,3,4,5. Use a função class() para saber qual a classe dos elementos desse vetor\nPor que a classe dos vetores ‘num2’ e ‘num3’ é diferente?\n\n\nJosé e Paulo adoram jogar basquete nas suas horas livres. Eles mantém uma competição entre si e por isso decidiram registrar todos os pontos que eles marcam durante as partidas.\n\nAté agora foram 8 partidas:\n\nJosé fez 8, 10, 12, 9, 15, 16, 11, 7 cestas.\nPaulo fez 5, 11, 13, 14, 23, 14, 9, 10 cestas.\n\n\nCrie dois objetos que contenham o número de cestas que cada um fez:\nVerifique a classe de cada um dos objetos:\nCom a utilização da ajuda do R, procure por uma função que possibilite o cálculo de médias. Com ela, calcule as médias de cestas dos dois jogadores e atribua estes valores a objetos diferentes:\nCompare os valores das médias calculadas usando os operadores lógicos “&gt;” e “&lt;”. Quem teve um desempenho médio melhor?\n\n\n\nData Frames:\nVetores são muito úteis, mas na medida que trabalhamos com muitos tipos de vetores e com mais valores, fica mais complicado. Para contornar esse problema, nós temos em R um objeto chamado de Dataframe. O Dataframe é uma espécie de matriz: tem linhas e colunas. A diferença é: numa matriz, todos as colunas tem um mesmo tipo, enquanto em um data.frame podemos ter em cada coluna um tipo diferente de dado. Assim, dataframes podem ter uma coluna de um vetor numérico e outra de um vetor de caracteres.\nO data.frame ‘contagem’ mostra a quantidade de células contadas por 5 ICs diferentes durante a primeira semana de trabalho no laboratório.\n\ncontagem &lt;- data.frame(IC = c('Você','João','Fernanda','Júlio','Larissa'),\n                       semana_1 = c(30, 46, 50, 20, 10))\n\nNa segunda semana de experimento, todos os ICs do laboratório repetiram a contagem, e os números de células contadas foram: 10, 39, 55, 11, 20.\n\nCrie uma nova coluna neste mesmo dataframe chamada de ‘semana_2’ com estes números.\nO chefe do laboratório pediu para que os ICs mostrassem qual deles contou o maior e o menor número de células em cada semana. Procure por funções no R que mostre qual valor de contagem na semana 1 é maior e qual é o menor.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funcionamento básico</span>"
     ]
@@ -302,7 +302,7 @@
   {
     "objectID": "content/04_manipulation.html",
     "href": "content/04_manipulation.html",
-    "title": "\n4  Manipulação de Vetores, Data Frames e Listas\n",
+    "title": "4  Manipulação de Vetores, Data Frames e Listas",
     "section": "",
     "text": "4.1 Trabalhando com Vetores\nOperações vetorizadas\nx&lt;-1:5\ny&lt;-6:10\nx+y               #ocorre a soma dos valores de ambos os vetores\n\n[1]  7  9 11 13 15\n\nx*2               #podemos multiplicar um vetor por um numero\n\n[1]  2  4  6  8 10\n\nx^2\n\n[1]  1  4  9 16 25\n\nz&lt;-c(x,y)\nz+x\n\n [1]  2  4  6  8 10  7  9 11 13 15\n\nw&lt;-1:3\nw+x\n\n[1] 2 4 6 5 7\n\nl&lt;-c(T, T, F, T, F, F)\nl/2\n\n[1] 0.5 0.5 0.0 0.5 0.0 0.0\nPara acessar vetores, usamos [ ]\nletter &lt;- c(\"x\", \"y\", \"z\", \"w\", \"j\")\nletter[2]               #acessa o segundo elemento do vetor\n\n[1] \"y\"\n\nletter[2:4]             #podemos usar sequencia de valores\n\n[1] \"y\" \"z\" \"w\"\n\nletter[c(1, 4)]         #usamos a funcao c() para valores nao contiguos\n\n[1] \"x\" \"w\"\n\nletter[-2]              #usamos numeros negativos para excluir um ou mais valores\n\n[1] \"x\" \"z\" \"w\" \"j\"\n\nletter[c(-2, -5)]\n\n[1] \"x\" \"z\" \"w\"\n\nidx &lt;- c(1, 4)          #podemos criar indices numericos\nletter[idx]\n\n[1] \"x\" \"w\"\n\nx&lt;-1:10                 \nx[x&gt;7]                  #podemos usar \"&lt;\", \"==\", \"&gt;=\", etc.\n\n[1]  8  9 10\n\nletter[letter&gt;\"k\"]      #tambem eh possivel para caracteres\n\n[1] \"x\" \"y\" \"z\" \"w\"\n\nletter[letter&lt;\"k\"]\n\n[1] \"j\"\n\nletter==\"z\"\n\n[1] FALSE FALSE  TRUE FALSE FALSE\nFunções para identificar valores extremos\nset.seed(1)\ns &lt;- sample(-1000:1000, 200)\n\nwhich.max(s)            #procura a posicao do maior valor\n\n[1] 126\n\nmax(s)                  #imprime o maior valor \n\n[1] 997\n\nrange(s)\n\n[1] -982  997\n\ns&gt;0                     #cria um vetor logico\n\n  [1]  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE\n [13]  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE\n [25] FALSE FALSE  TRUE  TRUE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE\n [37] FALSE  TRUE FALSE  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE\n [49] FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE\n [61]  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE\n [73] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE\n [85]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE\n [97] FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE\n[109] FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE\n[121] FALSE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE\n[133]  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE\n[145]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE FALSE  TRUE\n[157] FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE\n[169]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE\n[181]  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE\n[193]  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE\n\nwhich(s&gt;0)              #cria um vetor com as posicoes que satisfazem o comando\n\n  [1]   1   2   6  10  11  13  14  15  16  18  19  20  21  23  27  28  31  32\n [19]  38  40  42  43  45  50  52  56  61  62  63  66  67  69  70  72  74  75\n [37]  77  78  79  80  81  85  86  87  88  89  90  91  93  94  95  99 100 102\n [55] 105 110 111 113 117 118 119 120 122 123 124 126 130 131 133 134 136 138\n [73] 142 143 145 146 147 148 149 151 153 154 156 161 163 166 168 169 170 177\n [91] 178 181 182 185 187 190 191 192 193 194 198\nFunções de ordenamento\nx &lt; -c(3, 8, 2, 1, 5, 9, 7, 7, 3)\n\n [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n\nx      \n\n [1]  1  2  3  4  5  6  7  8  9 10\n\nsort(x)                 #ordena um vetor\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\nsort(x, decreasing = T)\n\n [1] 10  9  8  7  6  5  4  3  2  1\n\norder(x)                #retorna a ordem de cada elemento para torná-lo crescente\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\nsample(x)               #randomiza\n\n [1]  3  8  1  2  4  7  6  5  9 10\n\nunique(x)               #elimina as replicatas\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\nduplicated(x)           #logico\n\n [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE",
     "crumbs": [
@@ -312,7 +312,7 @@
   {
     "objectID": "content/04_manipulation.html#trabalhando-com-vetores",
     "href": "content/04_manipulation.html#trabalhando-com-vetores",
-    "title": "\n4  Manipulação de Vetores, Data Frames e Listas\n",
+    "title": "4  Manipulação de Vetores, Data Frames e Listas",
     "section": "",
     "text": "Ex.1: Quantos valores de s sao maiores que 0?\n\n\n\n\n\n\nlength(which(s&gt;0))\n\n[1] 101\n\n\n\n\n\n\n\n\n\n\n\nEx.2: Faça um vetor contendo os valores de S maiores do que 0.\n\n\n\n\n\n\nmaior_que_zero &lt;- s[which(s&gt;0)]\n\n\n\n\n\n\n\n\n\n\n\n\nEx.3: quantos duplicados existem em x?\n\n\n\n\n\n\nlength(which(duplicated(x)))\n\n[1] 0\n\n#ou\nlength(x[duplicated(x)])\n\n[1] 0",
     "crumbs": [
@@ -322,8 +322,8 @@
   {
     "objectID": "content/04_manipulation.html#trabalhando-com-data.frames",
     "href": "content/04_manipulation.html#trabalhando-com-data.frames",
-    "title": "\n4  Manipulação de Vetores, Data Frames e Listas\n",
-    "section": "\n4.2 Trabalhando com data.frames",
+    "title": "4  Manipulação de Vetores, Data Frames e Listas",
+    "section": "4.2 Trabalhando com data.frames",
     "text": "4.2 Trabalhando com data.frames\nPara acessar data.frames e listas usamos [], [[]] ou $\n\ndt &lt;- data.frame(number=c(1, 2, 3, 4, 5), \n               letter = c(\"x\", \"y\", \"z\", \"w\", \"j\"),\n               logical = c(TRUE, FALSE, FALSE, TRUE, FALSE))\n\ndt[[1]]              # [[ ]] acessa cada coluna por posicao\n\n[1] 1 2 3 4 5\n\ndt[,1]               # [ ] acessa as coordenadas [linha, coluna]\n\n[1] 1 2 3 4 5\n\ndt$number            # $ acessa cada coluna por nome\n\n[1] 1 2 3 4 5\n\n\ndata.frames possuem colnames e rownames\n\ncolnames(dt)\n\n[1] \"number\"  \"letter\"  \"logical\"\n\nrow.names(dt)\n\n[1] \"1\" \"2\" \"3\" \"4\" \"5\"\n\n\nPodemos alterar colanmes e rownames\n\nrow.names(dt) &lt;- c(\"a\", \"b\", \"c\", \"d\", \"e\")\ncolnames(dt)[2] &lt;- \"letras\"     #alteramos unicamente a posicao 2\n\nPodemos alterar valores específicos de um data.frame\n\ndt[3,1] &lt;- \"10\"\ndt$logical&lt;-as.numeric(dt$logical)\ndt$letras&lt;-NA\n\nPodemos verificar as ocorrências de um data.frame em outro\n\nbiometria &lt;- data.frame(nomes=c(\"Carlos\", \"Roberto\", \"Olivio\", \"Joel\"),\n                      altura=c(180, 187, 155, 168),\n                      peso=c(80, 90, 98, 64))\nesportes &lt;- data.frame(nomes=c(\"Carlos\", \"Roberto\", \"Olivio\", \"Jomar\"),\n                     esportes=c(\"futebol\", \"remo\", \"sumo\", \"maratona\"))\n\nbiometria$nomes%in%esportes$nomes         #constroi um logico \n\n[1]  TRUE  TRUE  TRUE FALSE\n\nidx &lt;- biometria$nomes%in%esportes$nomes    #pode ser usado como indice\nx &lt;- biometria[idx,]   \n\nOrdenando data.frames por uma coluna\n\nbiometria &lt;- biometria[with(biometria, order(altura)), ]\n\nUnindo data.frames com a função merge()\n\nunido &lt;- merge(biometria, esportes, by=\"nomes\")   \n\n\n\n\n\n\n\nIndepende da ordem dos data.frames! A busca é feita pelo nome, não pela ordem! O resultado sempre virá em ordem alfabética!\n\n\n\n\nunido&lt;-merge(biometria, esportes, by=\"nomes\", all.x=T) #com todos presentos no primeiro\nunido&lt;-merge(biometria, esportes, by=\"nomes\", all.y=T) #com todos presentos no segundo\nunido&lt;-merge(biometria, esportes, by=\"nomes\", all=T)   #com todos presentos\n\n\n\n\n\n\n\nNesse caso, as informações faltantes são preenchidas por NA!",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Manipulação de Vetores, Data Frames e Listas</span>"
@@ -332,8 +332,8 @@
   {
     "objectID": "content/04_manipulation.html#trabalhando-com-listas",
     "href": "content/04_manipulation.html#trabalhando-com-listas",
-    "title": "\n4  Manipulação de Vetores, Data Frames e Listas\n",
-    "section": "\n4.3 Trabalhando com Listas",
+    "title": "4  Manipulação de Vetores, Data Frames e Listas",
+    "section": "4.3 Trabalhando com Listas",
     "text": "4.3 Trabalhando com Listas\n\nls&lt;-list(a=c(\"x\", \"y\", \"z\", \"w\", \"j\"), b=1:4, c=c(\"Joca\", \"Bia\", \"Licurgo\"), d=dt)\n\nls[1]\n\n$a\n[1] \"x\" \"y\" \"z\" \"w\" \"j\"\n\nls[[1]]\n\n[1] \"x\" \"y\" \"z\" \"w\" \"j\"\n\nls$a\n\n[1] \"x\" \"y\" \"z\" \"w\" \"j\"\n\nclass(ls[1])\n\n[1] \"list\"\n\nclass(ls[[1]])\n\n[1] \"character\"\n\nls[[c(3,2)]]      #posição na lista e posição no elemento\n\n[1] \"Bia\"",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Manipulação de Vetores, Data Frames e Listas</span>"
@@ -342,9 +342,9 @@
   {
     "objectID": "content/04_manipulation.html#desafio",
     "href": "content/04_manipulation.html#desafio",
-    "title": "\n4  Manipulação de Vetores, Data Frames e Listas\n",
-    "section": "\n4.4 Desafio",
-    "text": "4.4 Desafio\n\n\n\n\n\n\nPratique sem IA!\n\n\n\nOs desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\nEvite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\nAprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀\n\n\n\nConsidere o seguinte vetor:\n\n\nx &lt;- c(1, 45, 6, 88, 30, 4)\n\n\nObtenha um outro vetor a partir deste que contenha apenas os elementos da posição 2 e da última posição.\nAtribua um nome para cada um dos elementos do vetor x.\nOrdene o vetor x, em ordem crescente, de duas maneiras: usando a função sort() e a função order().\n\n\nConsidere os seguintes vetores:\n\n\nx &lt;- c(5, 2, 1, 4)\nxx &lt;- c(1, 10, 15, 18)\ny &lt;- rep(1, 5)\nz &lt;- c(TRUE, FALSE, TRUE, TRUE)\nw &lt;- c(\"Maria\", \"Elisa\", \"Pedro\")\n\nExplique a operação realizada por cada um dos comandos nos itens abaixo:\n\n\n\n\nsum(x) \n\n[1] 12\n\nrange(x) \n\n[1] 1 5\n\nlength(y) \n\n[1] 5\n\nsum(y) \n\n[1] 5\n\n\n\n\n\n\nc(x, y, 13)\n\n [1]  5  2  1  4  1  1  1  1  1 13\n\n\n\n\n\n\nxx - x \n\n[1] -4  8 14 14\n\nc(x, 12) * y \n\n[1]  5  2  1  4 12\n\n1:6 + 1 \n\n[1] 2 3 4 5 6 7\n\n1:9 + 1:2\n\n[1]  2  4  4  6  6  8  8 10 10\n\n\n\n\n\n\nx &lt;= 2 \n\n[1] FALSE  TRUE  TRUE FALSE\n\nx &lt;= 2 & z \n\n[1] FALSE FALSE  TRUE FALSE\n\n\n\n\n\n\nsubstring(w, 2, 4) \n\n[1] \"ari\" \"lis\" \"edr\"\n\npaste(substring(w, 1, 2), substring(w, 5, 5), sep = \"...\") \n\n[1] \"Ma...a\" \"El...a\" \"Pe...o\"\n\n\n\nConsidere o vetor:\n\n\nset.seed(1)\nv &lt;- sample(1:100, 20)\n\n\nQuantos elementos do vetor ‘v’ são maiores que 60?\nQuais as posições do vetor ‘v’ que contem elementos maiores que 60?\nObtenha o valor máximo do vetor ‘v’. Use pelo menos duas abordagens diferentes.\n\n\nCrie as seguintes sequências apenas usando as funções ‘rep()’ e ‘seq()’. Verifique a documentação das funções.\n\n\n1 2 3 4 5 6 7 8 9\n“m” “w” “m” “w” “m” “w” “m” “w” “m” “w”\n1 2 3 4 1 2 3 4 1 2 3 4\n4 4 4 3 3 3 2 2 2 1 1 1\n1 2 2 3 3 3 4 4 4 4 5 5 5 5 5\n1 1 3 3 5 5 7 7 9 9 11 11",
+    "title": "4  Manipulação de Vetores, Data Frames e Listas",
+    "section": "4.4 Desafio",
+    "text": "4.4 Desafio\n\n\n\n\n\n\nPratique sem IA!\n\n\n\nOs desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\nEvite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\nAprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀\n\n\n\nConsidere o seguinte vetor:\n\n\nx &lt;- c(1, 45, 6, 88, 30, 4)\n\n\nObtenha um outro vetor a partir deste que contenha apenas os elementos da posição 2 e da última posição.\nAtribua um nome para cada um dos elementos do vetor x.\nOrdene o vetor x, em ordem crescente, de duas maneiras: usando a função sort() e a função order().\n\n\n\nConsidere os seguintes vetores:\n\n\nx &lt;- c(5, 2, 1, 4)\nxx &lt;- c(1, 10, 15, 18)\ny &lt;- rep(1, 5)\nz &lt;- c(TRUE, FALSE, TRUE, TRUE)\nw &lt;- c(\"Maria\", \"Elisa\", \"Pedro\")\n\nExplique a operação realizada por cada um dos comandos nos itens abaixo:\n\n\n\n\nsum(x) \n\n[1] 12\n\nrange(x) \n\n[1] 1 5\n\nlength(y) \n\n[1] 5\n\nsum(y) \n\n[1] 5\n\n\n\n\n\n\nc(x, y, 13)\n\n [1]  5  2  1  4  1  1  1  1  1 13\n\n\n\n\n\n\nxx - x \n\n[1] -4  8 14 14\n\nc(x, 12) * y \n\n[1]  5  2  1  4 12\n\n1:6 + 1 \n\n[1] 2 3 4 5 6 7\n\n1:9 + 1:2\n\n[1]  2  4  4  6  6  8  8 10 10\n\n\n\n\n\n\nx &lt;= 2 \n\n[1] FALSE  TRUE  TRUE FALSE\n\nx &lt;= 2 & z \n\n[1] FALSE FALSE  TRUE FALSE\n\n\n\n\n\n\nsubstring(w, 2, 4) \n\n[1] \"ari\" \"lis\" \"edr\"\n\npaste(substring(w, 1, 2), substring(w, 5, 5), sep = \"...\") \n\n[1] \"Ma...a\" \"El...a\" \"Pe...o\"\n\n\n\nConsidere o vetor:\n\n\nset.seed(1)\nv &lt;- sample(1:100, 20)\n\n\nQuantos elementos do vetor ‘v’ são maiores que 60?\nQuais as posições do vetor ‘v’ que contem elementos maiores que 60?\nObtenha o valor máximo do vetor ‘v’. Use pelo menos duas abordagens diferentes.\n\n\n\nCrie as seguintes sequências apenas usando as funções ‘rep()’ e ‘seq()’. Verifique a documentação das funções.\n\n\n\n1 2 3 4 5 6 7 8 9\n“m” “w” “m” “w” “m” “w” “m” “w” “m” “w”\n1 2 3 4 1 2 3 4 1 2 3 4\n4 4 4 3 3 3 2 2 2 1 1 1\n1 2 2 3 3 3 4 4 4 4 5 5 5 5 5\n1 1 3 3 5 5 7 7 9 9 11 11",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Manipulação de Vetores, Data Frames e Listas</span>"
     ]
@@ -352,9 +352,9 @@
   {
     "objectID": "content/05_imp_exp.html",
     "href": "content/05_imp_exp.html",
-    "title": "\n5  Importação e exportação de dados\n",
+    "title": "5  Importação e exportação de dados",
     "section": "",
-    "text": "5.1 Importando arquivos\nVamos aqui listar algumas funções úteis para a importação de arquivos no R.\nA função source() carrega arquivos de scripts em R e executa os comandos ali contidos.\n# Caminho onde o script está salvo\nsource(\"/home/usuario/Área de Trabalho/script.R\")\nA função load() permite o carregamento de arquivos binários reconhecíveis pelo R. A extensão .RData é reconhecida pelo RStudio.\n# Caminho onde o .RData está salvo\nload(\"/home/usuario/Área de Trabalho/arquivo.RData\")",
+    "text": "5.1 Importando arquivos\nUma das habilidades básicas necessárias para se fazer análises com o R é importar arquivos e fazer conexões com, por exemplo, bancos de dados, e exportar os resultados obtidos em formatos que possam ser lidos pela maioria dos softwares atuais.\nVamos aqui listar algumas funções úteis para a importação de arquivos no R.\nA função source() carrega arquivos de scripts em R e executa os comandos ali contidos.\n# Caminho onde o script está salvo\nsource(\"/home/usuario/Área de Trabalho/script.R\")\nA função load() permite o carregamento de arquivos binários reconhecíveis pelo R. A extensão .RData é reconhecida pelo RStudio.\n# Caminho onde o .RData está salvo\nload(\"/home/usuario/Área de Trabalho/arquivo.RData\")",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Importação e exportação de dados</span>"
     ]
@@ -362,7 +362,7 @@
   {
     "objectID": "content/05_imp_exp.html#importando-arquivos",
     "href": "content/05_imp_exp.html#importando-arquivos",
-    "title": "\n5  Importação e exportação de dados\n",
+    "title": "5  Importação e exportação de dados",
     "section": "",
     "text": "source()\n\n\n\n\nload()",
     "crumbs": [
@@ -372,9 +372,9 @@
   {
     "objectID": "content/05_imp_exp.html#importando-dados-tabulares",
     "href": "content/05_imp_exp.html#importando-dados-tabulares",
-    "title": "\n5  Importação e exportação de dados\n",
-    "section": "\n5.2 Importando dados tabulares",
-    "text": "5.2 Importando dados tabulares\nA principal função para importar dados tabulares (tabelas, planilhas, etc.) para o R é a read.table(). Esta função possui vários argumentos que podem ser modificados.\nAntes de carregar dados tabulares no R, é importante saber como o dado está organizado (se a separação entre as colunas é feita por tabulação ou por vírgula, por exemplo.)\nAlguns argumentos cuja modificação pode ser útil para a importação da tabela:\n\n\nfile: caminho do diretório onde o arquivo está.\n\nheader: se FALSE, não considera o cabeçalho (se houver) da tabela\n\nsep: como o dado está separado. Se por tabulação, sep = \"\\t\", se por vírgula, sep = \",\"\n\n\ndec: como os números decimais são definidos, se com “.” ou “,”.\n\ncol.names e row.names: recebem um vetor contendo os nomes das colunas e das linhas, respectivamente.\n\nquote: atribui um caracter para as aspas. Por padrão, atribui ““.\n\ncomment.char: atribui um caracter para ser usado como comentário.\n\nskip: valor numérico. Pula a importação da quantidade definida de linhas.\n\nstringsAsFactors: se uma das colunas da tabela for um vetor de caracteres, a opção TRUE a considera como um vetor de fatores.\n\nOutras duas funções bastante utilizadas são derivadas da função read.table(). Estas possuem os mesmos argumentos da função read.table().\n\n\nread.delim(): por default, considera o argumento sep = \"\\t\". Útil para a importação de arquivos cujos elementos são separados por tabulações.\n\nread.csv(): por default, considera o argumento sep = \",\". Útil para leitura de arquivos .csv.",
+    "title": "5  Importação e exportação de dados",
+    "section": "5.2 Importando dados tabulares",
+    "text": "5.2 Importando dados tabulares\nA principal função para importar dados tabulares (tabelas, planilhas, etc.) para o R é a read.table(). Esta função possui vários argumentos que podem ser modificados.\nAntes de carregar dados tabulares no R, é importante saber como o dado está organizado (se a separação entre as colunas é feita por tabulação ou por vírgula, por exemplo.)\nAlguns argumentos cuja modificação pode ser útil para a importação da tabela:\n\nfile: caminho do diretório onde o arquivo está.\nheader: se FALSE, não considera o cabeçalho (se houver) da tabela\nsep: como o dado está separado. Se por tabulação, sep = \"\\t\", se por vírgula, sep = \",\"\ndec: como os números decimais são definidos, se com “.” ou “,”.\ncol.names e row.names: recebem um vetor contendo os nomes das colunas e das linhas, respectivamente.\nquote: atribui um caracter para as aspas. Por padrão, atribui ““.\ncomment.char: atribui um caracter para ser usado como comentário.\nskip: valor numérico. Pula a importação da quantidade definida de linhas.\nstringsAsFactors: se uma das colunas da tabela for um vetor de caracteres, a opção TRUE a considera como um vetor de fatores.\n\nOutras duas funções bastante utilizadas são derivadas da função read.table(). Estas possuem os mesmos argumentos da função read.table().\n\nread.delim(): por default, considera o argumento sep = \"\\t\". Útil para a importação de arquivos cujos elementos são separados por tabulações.\nread.csv(): por default, considera o argumento sep = \",\". Útil para leitura de arquivos .csv.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Importação e exportação de dados</span>"
     ]
@@ -382,8 +382,8 @@
   {
     "objectID": "content/05_imp_exp.html#importando-arquivos-de-estrutura-desconhecida",
     "href": "content/05_imp_exp.html#importando-arquivos-de-estrutura-desconhecida",
-    "title": "\n5  Importação e exportação de dados\n",
-    "section": "\n5.3 Importando arquivos de estrutura desconhecida",
+    "title": "5  Importação e exportação de dados",
+    "section": "5.3 Importando arquivos de estrutura desconhecida",
     "text": "5.3 Importando arquivos de estrutura desconhecida\nQuando lidamos com arquivos dos quais desconhecemos a sua estrutura, podemos dispor de algumas estratégias para facilitar a importação deles para o R.\nPodemos usar a função readLines(). Esta função pode abrir uma conexão (ver adiante) com um arquivo e ler o conteúdo de suas linhas. A saída da função é um vetor de caracteres, onde o conteúdo de cada linha do arquivo original compreenderá uma posição do vetor de saída. Este procedimento pode revelar como o dado está organizado: se é um dado tabulado, como os elementos de cada coluna estão separados, etc.\n\n# Irá ler as 10 primeiras linhas do arquivo\nreadLines(\"COG.mappings.v9.0.txt\", 10) \n\nUma outra forma de desvendar a estrutura de um arquivo é usando a função scan(). A saída da função scan() é um vetor de caracteres onde cada string do arquivo original compreenderá uma posição do vetor de saída.\n\nscan(file = 'COG.mappings.v9.0.txt', nlines = 10, what = character())",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Importação e exportação de dados</span>"
@@ -392,8 +392,8 @@
   {
     "objectID": "content/05_imp_exp.html#conexões",
     "href": "content/05_imp_exp.html#conexões",
-    "title": "\n5  Importação e exportação de dados\n",
-    "section": "\n5.4 Conexões",
+    "title": "5  Importação e exportação de dados",
+    "section": "5.4 Conexões",
     "text": "5.4 Conexões\nAs funções citadas anteriormente tem em comum a capacidade de abrirem conexões com arquivos e extraírem as informações neles contidas. Além destas, o R possui muitas outras funções para lidar com outros tipos de arquivos e dados externos ao R.\nPode-se também estabelecer conexões com sites da web:\n\n# url() abre uma conexão com arquivo web\ncon &lt;- url(\"http://www.tribunadonorte.com.br/\", \"r\", 10)\nx &lt;- readLines(con)\nx[1:10]\nclose(con)",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Importação e exportação de dados</span>"
@@ -402,8 +402,8 @@
   {
     "objectID": "content/05_imp_exp.html#salvando-arquivos",
     "href": "content/05_imp_exp.html#salvando-arquivos",
-    "title": "\n5  Importação e exportação de dados\n",
-    "section": "\n5.5 Salvando arquivos",
+    "title": "5  Importação e exportação de dados",
+    "section": "5.5 Salvando arquivos",
     "text": "5.5 Salvando arquivos\nOs objetos do R podem ser salvos em arquivos .RData por meio da função save(). Uma quantidade indeterminada de objetos podem ser salvos no mesmo arquivo .RData.\n\nsave(unido, biometria, esportes, file = \"arquivo.RData\")    \n\nOutra funcionalidade útil é a exportação de objetos tabulares do R para arquivos de texto. Para isso, usamos a função write.table(). Esta função possui argumentos semelhantes aos da função read.table().\nAo usar a função write.table(), é importante definir o diretório no qual o arquivo será salvo e o tipo de separador usado para separar os elementos (argumento sep). Segue a seguinte estrutura:\n\nwrite.table(&lt;objeto&gt;, file = &lt;diretório de destino&gt;, sep = &lt;separador&gt;)\n\nExemplo:\n\nwrite.table(table1, file = \"arquivo.txt\", sep = \"\\t\", row.names = FALSE, quote = FALSE)\n\nAlém disso, também como a função read.table(), write.table() possui outras funções genéricas como write.csv(), por exemplo, a qual possui o argumento sep = \",\" por default.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Importação e exportação de dados</span>"
@@ -412,8 +412,8 @@
   {
     "objectID": "content/05_imp_exp.html#desafio",
     "href": "content/05_imp_exp.html#desafio",
-    "title": "\n5  Importação e exportação de dados\n",
-    "section": "\n5.6 Desafio",
+    "title": "5  Importação e exportação de dados",
+    "section": "5.6 Desafio",
     "text": "5.6 Desafio\n\n\n\n\n\n\nPratique sem IA!\n\n\n\nOs desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\nEvite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\nAprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀\n\n\nEste exercício será feito usando o arquivo ‘happiness.csv’ em content/data/hapiness.csv\n\nNeste exercício, vamos importar uma tabela (em arquivo de texto) como um dataframe, fazer algumas operações e em seguida vamos salvar o resultado em um outro arquivo de texto. Antes de importar o arquivo, verifique sua estrutura (como as colunas estão separadas, se tem cabeçalho, etc.)\n\n\nImporte o arquivo corretamente e o armazene em uma variável. Obs.: A tabela possui alguns campos numéricos onde o separador decimal é uma vírgula. Importe a tabela de modo que as vírgulas sejam transformadas em pontos (procure ajuda na documentação das funções de importação vistas na aula).\nVerifique se a classe das colunas do dataframe condizem com o tipo de dado armazenado. Por exemplo, a coluna dos países é um vetor de caracter?\nCrie um subset do dataframe contendo apenas as informações dos países da América Latina e Caribe.\nDe acordo com o rank de felicidade, qual país da América Latina é o mais feliz?\nCrie um outro subset contendo apenas os países europeus. Calcule a média de felicidade (baseando-se no score de felicidade) dos países europeus e dos países da América Latina. Em qual região as pessoas são mais felizes?\nSalve o dataframe com as informações da América Latina em um arquivo de texto. Ele deve utilizar como separador o ‘;’.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Importação e exportação de dados</span>"
@@ -454,7 +454,7 @@
     "href": "content/06_databanks.html#bancos-de-dados-primários---buscando-dados-brutos-para-reanálise",
     "title": "6  Bancos de Dados Biológicos",
     "section": "6.3 Bancos de Dados Primários - Buscando Dados Brutos para Reanálise",
-    "text": "6.3 Bancos de Dados Primários - Buscando Dados Brutos para Reanálise\n\n6.3.1 GEO Datasets - Gene Expression Omnibus Datasets\n\nBanco de dados norte-americano, mantido pelo NCBI;\nContém dados de microarray e RNA-seq.\n\n \n\n\n\n\n\n\nÉ possível fazer o dowload do dado bruto obtido do experimento e utiliza-lo nas análises.",
+    "text": "6.3 Bancos de Dados Primários - Buscando Dados Brutos para Reanálise\n\n6.3.1 GEO Datasets - Gene Expression Omnibus Datasets\n\nBanco de dados norte-americano, mantido pelo NCBI;\nContém dados de microarray e RNA-seq.\n\n \n\n\n\n\n\n\nÉ possível fazer o dowload do dado bruto obtido do experimento e utiliza-lo nas análises.\n\n\n\n\n\n6.3.2 Array Express\n\nBanco de dados europeu, possui o mesmo escopo do GEO.\n\n\n\n\n6.3.3 SRA - Sequence Read Archive",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Bancos de Dados Biológicos</span>"
     ]

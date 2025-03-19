@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,12 +37,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-9a023c9ade86a60361e96e3e3f11bc54.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-8b3ea0116ff0d93d4ffd0e90a97ee776.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-162fe357cf1f427b4ce1edfda09a2b40.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -190,6 +190,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#bancos-de-dados-primários---buscando-dados-brutos-para-reanálise" id="toc-bancos-de-dados-primários---buscando-dados-brutos-para-reanálise" class="nav-link" data-scroll-target="#bancos-de-dados-primários---buscando-dados-brutos-para-reanálise"><span class="header-section-number">6.3</span> Bancos de Dados Primários - Buscando Dados Brutos para Reanálise</a>
   <ul class="collapse">
   <li><a href="#geo-datasets---gene-expression-omnibus-datasets" id="toc-geo-datasets---gene-expression-omnibus-datasets" class="nav-link" data-scroll-target="#geo-datasets---gene-expression-omnibus-datasets"><span class="header-section-number">6.3.1</span> GEO Datasets - Gene Expression Omnibus Datasets</a></li>
+  <li><a href="#array-express" id="toc-array-express" class="nav-link" data-scroll-target="#array-express"><span class="header-section-number">6.3.2</span> Array Express</a></li>
+  <li><a href="#sra---sequence-read-archive" id="toc-sra---sequence-read-archive" class="nav-link" data-scroll-target="#sra---sequence-read-archive"><span class="header-section-number">6.3.3</span> SRA - Sequence Read Archive</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -487,10 +489,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="geo-datasets---gene-expression-omnibus-datasets" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="geo-datasets---gene-expression-omnibus-datasets"><span class="header-section-number">6.3.1</span> GEO Datasets - Gene Expression Omnibus Datasets</h3>
 <ul>
-<li><p>Banco de dados norte-americano, mantido pelo NCBI;</p></li>
-<li><p>Contém dados de microarray e RNA-seq.</p></li>
+<li>Banco de dados norte-americano, mantido pelo NCBI;</li>
+<li>Contém dados de microarray e RNA-seq.</li>
 </ul>
-<p><img src="images/geodatasets.png" class="img-fluid"> <img src="images/geoexample.png" class="img-fluid quarto-figure quarto-figure-center" width="427"></p>
+<p><img src="images/geodatasets.png" class="img-fluid"> <img src="images/geoexample1.png" class="img-fluid"><img src="images/geoexample2.png" class="img-fluid" width="705"></p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -501,6 +503,17 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+</section>
+<section id="array-express" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="array-express"><span class="header-section-number">6.3.2</span> Array Express</h3>
+<ul>
+<li>Banco de dados europeu, possui o mesmo escopo do GEO.</li>
+</ul>
+<p><img src="images/arrayexpress.png" class="img-fluid"></p>
+</section>
+<section id="sra---sequence-read-archive" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="sra---sequence-read-archive"><span class="header-section-number">6.3.3</span> SRA - Sequence Read Archive</h3>
+<p><img src="images/sra.png" class="img-fluid"></p>
 
 
 </section>
@@ -733,8 +746,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -845,7 +856,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
