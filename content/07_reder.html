@@ -247,9 +247,148 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RedeR)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
 <p>Este exercício foi feito baseado na vinheta do RedeR. Use-o para tirar dúvidas.</p>
+</div>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vignette</span>(<span class="st">'RedeR'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Inicie o aplicativo RedeR:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se sua versão do RedeR for &gt; v. 3.0</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>RedeR<span class="sc">::</span><span class="fu">startRedeR</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Se sua versão do RedeR for &lt; 3.0</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>rdp <span class="ot">&lt;-</span> <span class="fu">RedPort</span>()</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">calld</span>(rdp)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Armazene os dados de expressão diferencial ‘ER.limma’ e os dados do interatoma ’hs.inter’em outros objetos</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(ER.limma)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(hs.inter)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>ER.limma</code> é o resultado de uma análise de expressão diferencial, que veremos adiante nesta disciplina. Basicamente, a análise de expressão visa comparar a expressão de genes em diferentes estados celulares e identificar quais genes tem aumento da expressão e quais genes tem expressão diminuída de uma condição para outra.</p>
+<p>Neste experimento, <code>células epiteliais mamárias</code> foram estimuladas com estrógeno por <code>3, 6 e 12 horas</code>. O que buscaremos aqui é a <code>comparação da expressão em uma determinada hora com a hora inicial</code> (hora 0).</p>
+<p>O dataframe <code>ER.limma</code> possui colunas com os identificadores dos genes (<code>ENTREZ id</code> e <code>gene symbol</code>), o <code>fold change</code> da variação da expressão (<strong>valores positivos indicam que o gene está upregulado, enquanto que valores negativos indicam que o gene está downregulado</strong>) para cada comparação de tempo, os <code>p-valores</code> associados a cada inferência e as colunas <code>degenes</code>, que mostram quais genes estão diferencialmente expressos (<strong>1 = gene upregulado</strong>, <strong>0 = gene não está diferencialmente expresso</strong>, <strong>-1 = gene downregulado</strong>).</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Por exemplo: a coluna ‘logFC.t3’ mostra a mudança na expressão de um determinado gene (as linhas da tabela) da terceira hora com relação à hora 0. A coluna ‘degenes.t3’ mostra qualitativamente se aquele gene em questao é diferencialmente expresso na comparação 3h-0h.</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dt <span class="ot">&lt;-</span> ER.limma</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>gi <span class="ot">&lt;-</span> hs.inter</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Vamos construir subgrafos que representem a expressão dos genes nas comparações 3h-0h, 6h-0h e 12h-0h.</p>
+<p><code>3h</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gt3 <span class="ot">&lt;-</span> <span class="fu">subg</span>(<span class="at">g=</span>gi, <span class="at">dat=</span>dt[dt<span class="sc">$</span>degenes.t3<span class="sc">!=</span><span class="dv">0</span>,], <span class="at">refcol=</span><span class="dv">1</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>gt3 <span class="ot">&lt;-</span> <span class="fu">att.setv</span>(<span class="at">g=</span>gt3, <span class="at">from=</span><span class="st">"Symbol"</span>, <span class="at">to=</span><span class="st">"nodeAlias"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>gt3 <span class="ot">&lt;-</span> <span class="fu">att.setv</span>(<span class="at">g=</span>gt3, <span class="at">from=</span><span class="st">"logFC.t3"</span>, <span class="at">to=</span><span class="st">"nodeColor"</span>, <span class="at">breaks=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="fl">0.4</span>), <span class="at">pal=</span><span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>6h</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gt6 <span class="ot">&lt;-</span> <span class="fu">subg</span>(<span class="at">g=</span>gi, <span class="at">dat=</span>dt[dt<span class="sc">$</span>degenes.t6<span class="sc">!=</span><span class="dv">0</span>,], <span class="at">refcol=</span><span class="dv">1</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>gt6 <span class="ot">&lt;-</span> <span class="fu">att.setv</span>(<span class="at">g=</span>gt6, <span class="at">from=</span><span class="st">"Symbol"</span>, <span class="at">to=</span><span class="st">"nodeAlias"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>gt6 <span class="ot">&lt;-</span> <span class="fu">att.setv</span>(<span class="at">g=</span>gt6, <span class="at">from=</span><span class="st">"logFC.t6"</span>, <span class="at">to=</span><span class="st">"nodeColor"</span>, <span class="at">breaks=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="fl">0.4</span>), <span class="at">pal=</span><span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>12h</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>gt12 <span class="ot">&lt;-</span> <span class="fu">subg</span>(<span class="at">g=</span>gi, <span class="at">dat=</span>dt[dt<span class="sc">$</span>degenes.t12<span class="sc">!=</span><span class="dv">0</span>,], <span class="at">refcol=</span><span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>gt12 <span class="ot">&lt;-</span> <span class="fu">att.setv</span>(<span class="at">g=</span>gt12, <span class="at">from=</span><span class="st">"Symbol"</span>, <span class="at">to=</span><span class="st">"nodeAlias"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>gt12 <span class="ot">&lt;-</span> <span class="fu">att.setv</span>(<span class="at">g=</span>gt12, <span class="at">from=</span><span class="st">"logFC.t12"</span>, <span class="at">to=</span><span class="st">"nodeColor"</span>, <span class="at">breaks=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="fl">0.4</span>), <span class="at">pal=</span><span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Use a ajuda do R e responda: O que a função <code>subg()</code> faz? O que o argumento <code>dat=dt[dt$degenes.t3!=0,]</code> significa?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A função subg() do pacote RedeR cria subgrafos a partir de um grafo existente, extraindo um subconjunto de nós e conexões com base em critérios específicos. O argumento dat=dt[dt$degenes.t3!=0,] filtra o data frame dt, incluindo apenas as linhas onde a coluna degenes.t3 é diferente de zero (genes diferencialmente expressos).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>O que a função <code>att.setv()</code> faz? O que os argumentos <code>g</code>, <code>from</code>, <code>to</code> designam?</p>
+<p>A função <code>att.setv()</code> do pacote RedeR atribui valores a atributos dos vértices (nós) em um grafo. O argumento <code>g</code> representa o grafo ao qual os atributos serão atribuídos, enquanto <code>from</code> especifica o nome do atributo a ser modificado e <code>to</code> define os valores que serão atribuídos a esse atributo para os respectivos nós.</p>
+</div>
+</div>
+</div>
+<p>Agora que contruimos os subgráficos, vamos adicioná-los à interface gráfica do RedeR:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se a versão do RedeR for &gt; 3.0 a função será addGraphToRedeR()</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">addGraph</span>(rdp, gt3, <span class="at">gcoord=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">25</span>), <span class="at">gscale=</span><span class="dv">20</span>, <span class="at">isNest=</span><span class="cn">TRUE</span>, <span class="at">theme=</span> <span class="st">'tm1'</span> , <span class="at">zoom=</span><span class="dv">30</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">addGraph</span>(rdp, gt6, <span class="at">gcoord=</span><span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">70</span>), <span class="at">gscale=</span><span class="dv">50</span>, <span class="at">isNest=</span><span class="cn">TRUE</span>, <span class="at">theme=</span> <span class="st">'tm1'</span> , <span class="at">zoom=</span><span class="dv">30</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">addGraph</span>(rdp, gt12, <span class="at">gcoord=</span><span class="fu">c</span>(<span class="dv">70</span>,<span class="dv">55</span>), <span class="at">gscale=</span><span class="dv">80</span>, <span class="at">isNest=</span><span class="cn">TRUE</span>, <span class="at">theme=</span> <span class="st">'tm1'</span> , <span class="at">zoom=</span><span class="dv">30</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Vamos construir o subgrafos aninhados, ou seja, vamos sobrepor as séries temporais.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nestNodes</span>(rdp, <span class="at">nodes=</span><span class="fu">V</span>(gt3)<span class="sc">$</span>name, <span class="at">parent=</span><span class="st">"N1"</span>, <span class="at">theme=</span> <span class="st">'tm2'</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nestNodes</span>(rdp, <span class="at">nodes=</span><span class="fu">V</span>(gt6)<span class="sc">$</span>name, <span class="at">parent=</span><span class="st">"N2"</span>, <span class="at">theme=</span> <span class="st">'tm2'</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nestNodes</span>(rdp, <span class="at">nodes=</span><span class="fu">V</span>(gt3)<span class="sc">$</span>name, <span class="at">parent=</span><span class="st">"N4"</span>, <span class="at">theme=</span> <span class="st">'tm3'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>O argumento ‘theme’ determina os temas (‘tm0’,‘tm1’,‘tm2’,‘tm3’,‘tm4’,‘tm5’, ‘tm6’) de apresentação dos ninhos. Experimente mudá-los e rode novamente os comandos acima.</p>
+</div>
+</div>
+</div>
+<p>Vamos concatenar as arestas que estão fora dos ninhos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mergeOutEdges</span>(rdp)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Relaxar a rede</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">relax</span>(rdp,<span class="dv">50</span>,<span class="dv">400</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Perceba que temos 3 grandes redes aninhadas: N0, que é um subgrafo mostrando os genes diferencialmente expressos na comparação 3-0h, o N1, que possui os subgrafos das comparações 3-0h e 6h-0h, e a N2 que possui os subgrafos das comparações 3-0h, 6-0h e 12-0h.</p>
+<p>Agora vamos adicionar uma legenda:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>scl <span class="ot">&lt;-</span> gt3<span class="sc">$</span>legNodeColor<span class="sc">$</span>scale </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>leg <span class="ot">&lt;-</span> gt3<span class="sc">$</span>legNodeColor<span class="sc">$</span>legend </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">addLegend.color</span>(rdp, <span class="at">colvec=</span>scl, <span class="at">labvec=</span>leg, <span class="at">title=</span><span class="st">"Downregulated - Upregulated"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Observe a rede formada. O que as cores dos nós representam?</p>
+<p>As cores dos nós na rede representam a regulação gênica, onde azul indica genes downregulados e vermelho indica genes upregulados, refletindo sua expressão diferencial.</p>
+</div>
+</div>
+</div>
+<p>Para resetar a interface grafica:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">resetd</span>(rdp)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
