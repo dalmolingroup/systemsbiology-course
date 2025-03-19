@@ -1,20 +1,20 @@
 ## RedeR Workflow
 
 Instalar o pacote RedeR (caso já tenha instalado, não rodar estas linhas)
-```{r}
+```{r eval=FALSE}
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("RedeR")
 ```
 
 ## Carregue o pacote RedeR
-```{r}
+```{r eval=FALSE}
 library(RedeR)
 library(igraph)
 ```
 
 Este exercício foi feito baseado na vinheta do RedeR. Use-o para tirar dúvidas.
-```{r}
+```{r eval=FALSE}
 vignette('RedeR')
 ```
 
