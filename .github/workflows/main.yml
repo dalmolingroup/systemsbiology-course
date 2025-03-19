@@ -42,7 +42,8 @@ jobs:
       # Install knitr and rmarkdown
       - name: Install R dependencies
         run: |
-          Rscript -e 'install.packages(c("knitr", "rmarkdown"))'
+          Rscript -e 'install.packages(c("knitr", "rmarkdown", "igraph"))'
+          Rscript -e 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager") BiocManager::install("RedeR")'
 
       # From https://github.com/julia-actions/setup-julia
       # - name: Setup Julia

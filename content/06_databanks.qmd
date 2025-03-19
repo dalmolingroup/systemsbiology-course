@@ -2,13 +2,10 @@
 
 #### Nesta aula veremos: {.unnumbered}
 
--   O que são bancos de dados;
-
--   Para que servem;
-
--   Classificação dos bancos de dados;
-
--   Quais os principais bancos de dados utilizados na Biologia de Sistemas.
+1.  O que são bancos de dados;
+2.  Para que servem;
+3.  Classificação dos bancos de dados;
+4.  Quais os principais bancos de dados utilizados na Biologia de Sistemas.
 
 ## O que são Bancos de Dados Biológicos?
 
@@ -26,7 +23,7 @@
 
 ![](images/genbank.png)
 
-![](images/genbankNotes.png)
+![](images/genbankNotes.png){fig-align="center" width="492" height="432"}
 
 ### Como surgiram os Bancos de Dados?
 
@@ -34,8 +31,8 @@
 
 ```{mermaid}
 flowchart LR
-  A(Desenvolvimento \n tecnológico) --> C{Obtenção de uma \n grande quantidade de dados}
-  B(Barateamento do custo \n das novas tecnologias) --> C{Obtenção de uma \n grande quantidade de dados}
+  A(Desenvolvimento tecnológico) --> C{Obtenção de uma grande quantidade de dados}
+  B(Barateamento do custo das novas tecnologias) --> C{Obtenção de uma grande quantidade de dados}
 ```
 
 ![](images/comic.png){fig-align="center" width="223"}
@@ -224,5 +221,4 @@ flowchart LR
 
 5.  Baxevanis AD. The Importance of Biological Databases in Biological Discovery. Curr Protoc Bioinforma. 7993;(September 2009):1-5. doi:10.1002/0471250953.bi0101s13.
 
-Playlist no youtube: 
-[How to use the Reactome](https://www.youtube.com/watch?v=TczSuUtcffE&list=PLs84PsexbuAhBHZZvDwmOuY6dU1868uM3)
+Playlist no youtube: [How to use the Reactome](https://www.youtube.com/watch?v=TczSuUtcffE&list=PLs84PsexbuAhBHZZvDwmOuY6dU1868uM3)

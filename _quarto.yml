@@ -15,6 +15,7 @@ book:
     - content/04_manipulation.qmd
     - content/05_imp_exp.qmd
     - content/06_databanks.qmd
+    - content/07_reder.qmd
   reader-mode: true
   favicon: content/images/dalmolin_icon.svg
   site-url: https://dalmolingroup.github.io/introductionR-course/

@@ -162,9 +162,9 @@ Independe da ordem dos data.frames! A busca é feita pelo nome, não pela ordem!
 :::
 
 ```{r}
-unido<-merge(biometria, esportes, by="nomes", all.x=T) #com todos presentos no primeiro
-unido<-merge(biometria, esportes, by="nomes", all.y=T) #com todos presentos no segundo
-unido<-merge(biometria, esportes, by="nomes", all=T)   #com todos presentos
+unido<-merge(biometria, esportes, by="nomes", all.x=T) #com todos presentes no primeiro
+unido<-merge(biometria, esportes, by="nomes", all.y=T) #com todos presentes no segundo
+unido<-merge(biometria, esportes, by="nomes", all=T)   #com todos presentes
 ```
 
 ::: callout-warning
@@ -224,7 +224,7 @@ Explique a operação realizada por cada um dos comandos nos itens abaixo:
 
 a)  
 
-```{r}
+```{r eval=FALSE}
 sum(x) 
 range(x) 
 length(y) 
@@ -233,13 +233,13 @@ sum(y)
 
 b)  
 
-```{r}
+```{r eval=FALSE}
 c(x, y, 13)
 ```
 
 c)  
 
-```{r}
+```{r eval=FALSE}
 xx - x 
 c(x, 12) * y 
 1:6 + 1 
@@ -248,21 +248,21 @@ c(x, 12) * y
 
 d)  
 
-```{r}
+```{r eval=FALSE}
 x <= 2 
 x <= 2 & z 
 ```
 
 e)  
 
-```{r}
+```{r eval=FALSE}
 substring(w, 2, 4) 
 paste(substring(w, 1, 2), substring(w, 5, 5), sep = "...") 
 ```
 
 3.  Considere o vetor:
 
-```{r}
+```{r eval=FALSE}
 set.seed(1)
 v <- sample(1:100, 20)
 ```
